@@ -42,3 +42,21 @@ or add following line to docker run
 ```
 
 The same is true for provider OVPN.
+
+
+### PROTONVPN
+1. Create a ProntonVPN [OpenVPN](https://account.protonvpn.com/account#openvpn) username and password
+1. [Find a p2p server](https://account.protonvpn.com/downloads#openvpn-configuration-files) -- lower load is generally better 
+2. Find the corresponding configuration by download [this file](https://github.com/haugene/vpn-configs-contrib/archive/main.zip)
+3. unzip main.zip and navigate to vpn-configs-contrib-main -> openvpn -> protonvpn
+4. Select your desired server and copy and paste the name excluding .ovpn to your `OPENVPN_PROVIDER` 
+
+Example Configuration:
+```
+...
+      - OPENVPN_PROVIDER=PROTONVPN
+      - OPENVPN_CONFIG=node-us-67.protonvpn.net.udp
+      - OPENVPN_USERNAME=UN #from step 1
+      - OPENVPN_PASSWORD=PW #from step 1
+...
+```
